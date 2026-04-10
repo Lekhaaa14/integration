@@ -189,8 +189,8 @@ st.markdown("---")
 st.subheader("👥 Top Users by Access Count")
 if top_users:
     df_users = pd.DataFrame(top_users)
-    if not df_users.empty and "user_id" in df_users.columns and "total_access" in df_users.columns:
-        st.bar_chart(df_users.set_index("user_id")["total_access"])
+    if not df_users.empty and "_id" in df_users.columns and "total_access" in df_users.columns:
+        st.bar_chart(df_users.set_index("_id")["total_access"])
     else:
         st.warning("No user data available for chart")
 else:
@@ -202,7 +202,7 @@ st.markdown("---")
 st.subheader("🚨 Recent Anomalies")
 if anomalies:
     df_anomalies = pd.DataFrame(anomalies)
-    columns_to_show = ["user_id", "role", "resource", "action", "timestamp"]
+    columns_to_show = ["user_id", "role", "resource", "action", "timestamp", "anomaly_flag"]
     columns_available = [col for col in columns_to_show if col in df_anomalies.columns]
     st.dataframe(df_anomalies[columns_available], use_container_width=True)
 else:
