@@ -9,7 +9,7 @@ st.set_page_config(page_title="Access Intelligence Dashboard", layout="wide")
 # API endpoints
 INTEGRATION_URL = "http://localhost:4000"
 MONICA_URL = "http://192.168.0.17:8000"
-LEKHA_URL = "http://localhost:3000"
+LEKHA_URL = "https://access-log-service.onrender.com"
 
 # Title
 st.title("🛡️ Access Intelligence Dashboard")
